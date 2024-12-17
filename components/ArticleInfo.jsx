@@ -15,10 +15,10 @@ export function ArticleInfo({
 
   return (
     <div className="article-details">
+      <h2 className="article-title">{title}</h2>
       {showImage && (
         <img src={article_img_url} alt={title} className="article-image" />
       )}
-      <h2 className="article-title">{title}</h2>
 
       <div className="article-meta">
         <p>

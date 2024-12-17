@@ -1,29 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArticleInfo } from "./ArticleInfo";
 
 export function ArticleCard({ article }) {
-  const {
-    article_id,
-    title,
-    author,
-    created_at,
-    article_img_url,
-    comment_count,
-    topic,
-    votes,
-  } = article;
-
-  const formattedDate = new Date(created_at).toLocaleDateString();
-
   return (
     <div className="article-card">
-      <img src={article_img_url} alt={title} className="article-image" />
-      <h2 className="article-title">{title}</h2>
-      <span className="article-topic">{topic}</span>
-      <br></br>
-      <span className="article-author">{author}</span>
-      <p className="article-date">{formattedDate}</p>
-      <p className="article-votes">Votes: {votes}</p>
-      <p className="article-comments">{comment_count} Comments</p>
+      <div className="article-info">
+        <ArticleInfo
+          title={article.title}
+          author={article.author}
+          created_at={article.created_at}
+          topic={article.topic}
+          votes={article.votes}
+          comment_count={article.comment_count}
+          article_img_url={article.article_img_url}
+          showImage={true}
+        />
+      </div>
+      <Link to={`/articles/${article.article_id}`} className="article-link">
+        Read Article
+      </Link>
     </div>
   );
 }

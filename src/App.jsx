@@ -11,16 +11,14 @@ function App() {
   return (
     <Router>
       <Header />
-      <SearchBar />
-      <FiltersAndSort />
-
+      {/* <SearchBar />
+      <FiltersAndSort /> */}
       <Routes>
         <Route path="/" element={<ArticleList />} />
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/articles/:article_id" element={<ArticlePage />} />
       </Routes>
-
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

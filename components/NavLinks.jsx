@@ -6,7 +6,10 @@ export function NavLinks() {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/articles">View All Articles</a>
+          <a href="/articles">Articles</a>
+        </li>
+        <li>
+          <a href="/topics">Topics</a>
         </li>
         <li>
           <a href="/profile">Sign In</a>

@@ -14,7 +14,9 @@ export function CommentCard({ comment }) {
       <p className="comment-date">{formattedDate}</p>
       <p className="comment-body">{body}</p>
       <p className="comment-votes">
-        <FaRegThumbsUp /> <b>{votes}</b> <FaRegThumbsDown />
+        <FaRegThumbsUp className="thumbs-up-vote" />
+         <b>{votes}</b>
+        <FaRegThumbsDown className="thumbs-down-vote" />
       </p>
     </div>
   );

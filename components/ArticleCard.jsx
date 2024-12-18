@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleInfo } from "./ArticleInfo";
+import { HiArrowLongRight } from "react-icons/hi2";
 
 export function ArticleCard({ article }) {
   return (
@@ -17,8 +18,12 @@ export function ArticleCard({ article }) {
           showImage={true}
         />
       </div>
-      <Link to={`/articles/${article.article_id}`} className="article-link">
-        Read Article
+      <Link
+        to={`/articles/${article.article_id}`}
+        className="article-link"
+        target="blank"
+      >
+        Read More <HiArrowLongRight />
       </Link>
     </div>
   );

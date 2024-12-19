@@ -4,7 +4,7 @@ import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
 export function CommentCard({ comment }) {
   const { author, body, created_at, votes } = comment;
 
-  const formattedDate = new Date(created_at).toLocaleDateString();
+  const formattedDate = new Date(created_at).toLocaleDateString("en-GB");
 
   return (
     <div className="comment-card">
@@ -15,7 +15,7 @@ export function CommentCard({ comment }) {
       <p className="comment-body">{body}</p>
       <p className="comment-votes">
         <FaRegThumbsUp className="thumbs-up-vote" />
-         <b>{votes}</b>
+        <b> {votes} </b>
         <FaRegThumbsDown className="thumbs-down-vote" />
       </p>
     </div>

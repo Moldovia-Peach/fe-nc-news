@@ -1,24 +1,29 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ArticleList } from "../components/ArticleList";
-import { ArticlePage } from "../components/ArticlePage";
-import { FiltersAndSort } from "../components/FiltersAndSort";
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { SearchBar } from "../components/SearchBar";
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header";
+import { Home } from "./components/Home";
+import { ArticleList } from "./components/ArticleList";
+import { ArticlePage } from "./components/ArticlePage";
+import { TopicPage } from "./components/TopicPage";
+import { Footer } from "./components/Footer";
+import { TopicList } from "./components/TopicList";
+import { ContactPage } from "./components/ContactPage";
+import { ErrorPage } from "./components/ErrorPage";
 
 function App() {
   return (
     <Router>
       <Header />
-      {/* <SearchBar />
-      <FiltersAndSort /> */}
       <Routes>
-        <Route path="/" element={<ArticleList />} />
-        <Route path="/articles" element={<ArticleList />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<ArticleList limit={Infinity} />} />
         <Route path="/articles/:article_id" element={<ArticlePage />} />
+        <Route path="/topics" element={<TopicList />} />
+        <Route path="/topics/:topicSlug" element={<TopicPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }

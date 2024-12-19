@@ -3,7 +3,7 @@ import { NavLinks } from "./NavLinks";
 
 export function Header() {
   return (
-    <header>
+    <header role="banner" className="header">
       <div className="header-content">
         <Logo />
         <NavLinks />

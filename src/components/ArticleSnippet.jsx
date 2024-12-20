@@ -4,10 +4,11 @@ import { getArticleById } from "../api";
 import { Error } from "./Error";
 
 function getSnippet(content, maxLength = 120) {
-  if (!content) return "";
-  return content.length > maxLength
-    ? content.slice(0, maxLength) + "..."
-    : content;
+  return content
+    ? content.length > maxLength
+      ? content.slice(0, maxLength) + "..."
+      : content
+    : "";
 }
 
 export function ArticleSnippet({ articleId }) {
@@ -36,14 +37,14 @@ export function ArticleSnippet({ articleId }) {
 
   if (error) {
     return (
-      <Error message={error.message || "Error loading article snippet."} />
+      <Error message={error.message || "Error loading the article snippet."} />
     );
   }
 
   return (
     <div className="article-snippet">
       <p className="article-snippet-text">
-        {getSnippet(article.body)}{" "}
+        {getSnippet(article?.body || "")}{" "}
         <Link to={`/articles/${article.article_id}`} className="read-more-link">
           Read More
         </Link>

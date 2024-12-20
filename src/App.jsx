@@ -9,6 +9,7 @@ import { Footer } from "./components/Footer";
 import { TopicList } from "./components/TopicList";
 import { ContactPage } from "./components/ContactPage";
 import { ErrorPage } from "./components/ErrorPage";
+import { LogInPage } from "./components/LogInPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/topics" element={<TopicList />} />
         <Route path="/topics/:topicSlug" element={<TopicPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<LogInPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

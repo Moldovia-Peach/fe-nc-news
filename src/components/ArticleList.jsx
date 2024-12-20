@@ -14,16 +14,6 @@ export function ArticleList({ limit }) {
   const sortBy = searchParams.get("sort_by") || "created_at";
   const order = searchParams.get("order") || "desc";
 
-  const handleSortChange = (newSortBy) => {
-    searchParams.set("sort_by", newSortBy);
-    setSearchParams(searchParams);
-  };
-
-  const handleOrderChange = (newOrder) => {
-    searchParams.set("order", newOrder);
-    setSearchParams(searchParams);
-  };
-
   useEffect(() => {
     setLoading(true);
     setError(null);
@@ -55,12 +45,10 @@ export function ArticleList({ limit }) {
   return (
     <div>
       <SortingControls
-        sortBy={sortBy}
-        order={order}
-        onSortChange={handleSortChange}
-        onOrderChange={handleOrderChange}
+      sortBy={sortBy}
+      order={order}
+      setSearchParams={setSearchParams}
       />
-
       <div className="article-list">
         {articles.map((article) => (
           <ArticleCard key={article.article_id} article={article} />

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
+import { UserContext } from "../contexts/UserContext";
+import { DeleteComment } from "./DeleteComment";
 
-export function CommentCard({ comment }) {
-  const { author, body, created_at, votes } = comment;
+export function CommentCard({ comment, setComments }) {
+  const { author, body, created_at, votes, comment_id } = comment;
+  const { user } = useContext(UserContext);
 
   const formattedDate = new Date(created_at).toLocaleDateString("en-GB");
 
@@ -18,6 +21,9 @@ export function CommentCard({ comment }) {
         <b> {votes} </b>
         <FaRegThumbsDown className="thumbs-down-vote" />
       </p>
+      {author === user?.username && (
+        <DeleteComment comment_id={comment_id} setComments={setComments} />
+      )}
     </div>
   );
 }

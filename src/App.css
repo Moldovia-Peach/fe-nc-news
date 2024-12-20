@@ -569,6 +569,7 @@
 .footer {
   background-color: #e9c3c3;
   padding: 2.5rem;
+  margin-top: 100px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -615,4 +616,159 @@
   font-style: italic;
   color: #4d4d4d;
   align-self: flex-end;
+}
+
+/* Add comment area  */
+.comment-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-input {
+  width: 70%;
+}
+
+/* Add comment button */
+.post-comment {
+  border-color: #2878a7;
+  margin: 10px;
+  font-size: 0.85rem;
+  font-weight: 200;
+}
+
+.post-comment:hover {
+  transform: scale(1.05);
+  background-color: #2878a7;
+  color: white;
+}
+
+/* Profile info */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-nav-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.profile-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.log-out-button {
+  font-size: 0.7rem;
+  border-color: #aaa;
+  border-style: groove;
+  font-weight: 400;
+}
+
+/* Login page container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+.login-container p {
+  text-align: left;
+  color: #8a8a8a;
+}
+
+.login-box {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+}
+
+.input-group input:focus {
+  border-color: #0e058a;
+  outline: none;
+}
+
+.login-button {
+  background-color: #0e058a;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.login-button:hover {
+  transform: scale(1.05);
+}
+
+/* Delete comment button  */
+
+.delete-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.delete-comment-btn {
+  padding: 0.5rem 1.5rem;
+  margin: 10px;
+  font-size: 0.85rem;
+  font-weight: 200;
+  border-color: #dc3545;
+  border-radius: 6px;
+}
+
+.delete-comment-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
 }
